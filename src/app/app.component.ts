@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular15-shoppingCartAdd';
+
+  makeInsecureRequest() {
+    this.http.get('https://unsecured-server.com/data').subscribe(
+      (response) => {
+        console.log('Respuesta del servidor:', response);
+      },
+      (error) => {
+        console.error('Error al hacer la petición:', error);
+      }
+    );
+  }
+
 }
