@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HttpClient } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular15-shoppingCartAdd';
+  const userInput = '2 + 2';
+  const result = eval(userInput);
+  console.log(result); // resultado 
+
+
+  constructor(private http: HttpClient) {}
 
   makeInsecureRequest() {
     this.http.get('https://unsecured-server.com/data').subscribe(
@@ -18,5 +24,12 @@ export class AppComponent {
       }
     );
   }
+
+  while (true) {
+    // Hacer algo aquí
+  }
+
+  let nombre;
+  console.log(nombre.length); // Error de referencia nula: nombre es undefined
 
 }
