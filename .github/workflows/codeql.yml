@@ -37,14 +37,6 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
-        # Use a unique suffix based on the matrix value to create a unique category name
-        # for the CodeQL analysis and SARIF upload actions.
-        category: ${{ matrix.language }}-${{ github.run_number }}
-
-    - name: Upload results to GitHub
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: /home/runner/work/test-public-repo/results/javascript.sarif
-        # Use the same unique category name used in the analyze action.
+        upload: true
         category: ${{ matrix.language }}-${{ github.run_number }}
 
