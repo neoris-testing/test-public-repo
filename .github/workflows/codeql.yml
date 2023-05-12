@@ -79,4 +79,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: /home/runner/work/test-public-repo/results/javascript.sarif
-        category: "Github-Upload"
+        category: "/language:${{matrix.language}}"
